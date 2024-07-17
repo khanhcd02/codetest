@@ -1,0 +1,12 @@
+# $Id: local.rules,v 1.11 2004/07/23 20:15:44 bmc Exp $
+# ----------------
+# LOCAL RULES
+# ----------------
+# This file intentionally does not come with signatures.  Put your local
+# additions here.
+alert icmp !192.168.56.101 any -> 192.168.56.101 any (msg:"Ping Detected"; sid:1000001; rev:1;)
+#alert icmp any any -> $HOME_NET any (msg:"Ping of Death Detected"; dsize:>1427; sid:1000002; rev:1;)
+#alert tcp any any -> $HOME_NET any (msg:"TCP Port Scan"; flags:S; threshold:type both, track by_src, count 20, seconds 10; sid:1000003; rev:1;)
+#alert tcp any any -> $HOME_NET any (msg:"DoS Attack"; flags:S; threshold: type threshold, track by_src, count 10000, seconds 1; sid:1000004; rev:1;)
+#alert tcp any any -> $HOME_NET any (msg:"DDoS Attack"; flags:S; threshold: type both, track by_dst, count 20000, seconds 1; sid:1000005; rev:1;)
+
